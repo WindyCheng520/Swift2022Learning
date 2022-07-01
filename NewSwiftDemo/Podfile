@@ -1,0 +1,49 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '13.0'
+
+
+#source 'https://github.com/CocoaPods/Specs.git'
+
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+target 'NewSwiftDemo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for NewSwiftDemo
+  pod 'SnapKit'
+  pod 'Alamofire'
+  
+  pod 'Then'
+  pod 'SwiftyJSON', '~> 5.0'
+  pod 'Kingfisher', '~> 7.0'
+  
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  
+  pod 'RxDataSources', '~> 5.0' #tableView/collectionView 数据源
+  
+  
+  
+  pod 'Moya', '~> 15.0'
+  pod 'HandyJSON'
+  
+  pod 'FMDB'
+#
+#  # or
+#
+#  pod 'Moya/RxSwift', '~> 15.0'
+#
+#  # or
+#
+#  pod 'Moya/ReactiveSwift', '~> 15.0'
+#
+#  # or
+#
+#  pod 'Moya/Combine', '~> 15.0'
+
+  # Pods for 2022Swift
+
+
+
+end

@@ -1,0 +1,8 @@
+1、ReactiveCocoa+MVVM在项目中的整体运用。
+2、高德地图定位跑步地点与与搜索附近的功能。
+3、AVAudioPlayer播报跑步过程中的跑步信息。
+4、Swift库Charts的使用展示跑步结果的历史统计图表。
+5、基于WKWebView实现与H5交互。
+6、使用CocoaPods管理第三放库，Git进行版本控制。
+
+
