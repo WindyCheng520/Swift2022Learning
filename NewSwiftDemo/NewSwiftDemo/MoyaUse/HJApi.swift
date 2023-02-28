@@ -9,12 +9,12 @@ import Foundation
 import Moya
 
 public enum HJApi {
-   ///随机诗句
-   case randomVerse
-   ///聚合数据新闻头条
-   case new([String: String])
-  case sendMobileMsg(String)
-  case uploadHeadImage(parameters: [String:Any], imageDate:Data)
+    ///随机诗句
+    case randomVerse
+    ///聚合数据新闻头条
+    case new([String: String])
+    case sendMobileMsg(String)
+    case uploadHeadImage(parameters: [String:Any], imageDate:Data)
 }
 
 extension HJApi: TargetType {

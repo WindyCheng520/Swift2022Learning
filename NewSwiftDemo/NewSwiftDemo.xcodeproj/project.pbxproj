@@ -29,6 +29,12 @@
 		23A19B12285975E90033D654 /* RxSwift1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19B10285975E90033D654 /* RxSwift1ViewController.swift */; };
 		23A19B13285975E90033D654 /* RxSwift1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A19B11285975E90033D654 /* RxSwift1ViewController.xib */; };
 		23A19B172859A70F0033D654 /* RxSwiftTableViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19B162859A70F0033D654 /* RxSwiftTableViewController1.swift */; };
+		23A6050429618B5100F48E90 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050329618B5100F48E90 /* NetworkAPI.swift */; };
+		23A6050629618B7E00F48E90 /* NetworkPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050529618B7E00F48E90 /* NetworkPlugin.swift */; };
+		23A6050829618BAC00F48E90 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050729618BAC00F48E90 /* NetworkResult.swift */; };
+		23A6050A29618BCE00F48E90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050929618BCE00F48E90 /* NetworkManager.swift */; };
+		23A6050C29618C6900F48E90 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050B29618C6900F48E90 /* LoginModel.swift */; };
+		23A6050E2961910100F48E90 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050D2961910100F48E90 /* NetworkViewController.swift */; };
 		23BDD26C2859B324008B69AA /* RxSwiftTableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26B2859B324008B69AA /* RxSwiftTableViewController2.swift */; };
 		23BDD26E2859B618008B69AA /* RxSwiftTableViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26D2859B618008B69AA /* RxSwiftTableViewController3.swift */; };
 		23BDD2702859B76E008B69AA /* RxSwiftTableViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26F2859B76E008B69AA /* RxSwiftTableViewController4.swift */; };
@@ -156,6 +162,7 @@
 		238B37C228695D9400A58CBC /* HJModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HJModel.swift; sourceTree = "<group>"; };
 		238B37C428695DC000A58CBC /* MoyaUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaUseViewController.swift; sourceTree = "<group>"; };
 		238B37C62869913700A58CBC /* ErrorDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorDemo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		23970E91296177D4007ACFFE /* Alamofile00001.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofile00001.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19AB928582FFC0033D654 /* SwiftProtocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftProtocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABA28585DFC0033D654 /* StructMutating.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructMutating.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABB285863FE0033D654 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
@@ -174,6 +181,12 @@
 		23A19B14285977F00033D654 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19B1528597D4B0033D654 /* Observable2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19B162859A70F0033D654 /* RxSwiftTableViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController1.swift; sourceTree = "<group>"; };
+		23A6050329618B5100F48E90 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		23A6050529618B7E00F48E90 /* NetworkPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPlugin.swift; sourceTree = "<group>"; };
+		23A6050729618BAC00F48E90 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		23A6050929618BCE00F48E90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		23A6050B29618C6900F48E90 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		23A6050D2961910100F48E90 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		23BDD26B2859B324008B69AA /* RxSwiftTableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController2.swift; sourceTree = "<group>"; };
 		23BDD26D2859B618008B69AA /* RxSwiftTableViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController3.swift; sourceTree = "<group>"; };
 		23BDD26F2859B76E008B69AA /* RxSwiftTableViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController4.swift; sourceTree = "<group>"; };
@@ -600,6 +613,13 @@
 				23BDD29C285EF17F008B69AA /* Alamofire001.playground */,
 				23BDD29D285F0216008B69AA /* Alamofire002.playground */,
 				23BDD29E285F03A0008B69AA /* Alamofire003.playground */,
+				23970E91296177D4007ACFFE /* Alamofile00001.playground */,
+				23A6050329618B5100F48E90 /* NetworkAPI.swift */,
+				23A6050529618B7E00F48E90 /* NetworkPlugin.swift */,
+				23A6050729618BAC00F48E90 /* NetworkResult.swift */,
+				23A6050929618BCE00F48E90 /* NetworkManager.swift */,
+				23A6050B29618C6900F48E90 /* LoginModel.swift */,
+				23A6050D2961910100F48E90 /* NetworkViewController.swift */,
 			);
 			path = AlamofireUse;
 			sourceTree = "<group>";
@@ -1310,6 +1330,7 @@
 				23A19AFF28586BCB0033D654 /* UIStackViewController.swift in Sources */,
 				23F6E32D2848E83C009643C5 /* DemoLabel.swift in Sources */,
 				23F6E3312848E970009643C5 /* Woman.swift in Sources */,
+				23A6050C29618C6900F48E90 /* LoginModel.swift in Sources */,
 				233D20E12857601900F41302 /* ListItem.m in Sources */,
 				23F6E33D2849A11F009643C5 /* TableViewController.swift in Sources */,
 				23F6E3362848EF4C009643C5 /* PageTitleView.swift in Sources */,
@@ -1323,12 +1344,14 @@
 				23F6E3272848E67A009643C5 /* Student.swift in Sources */,
 				23BDD27A2859CDA4008B69AA /* RxSwiftTableViewController9.swift in Sources */,
 				23F6E0D728473F78009643C5 /* SortViewController.m in Sources */,
+				23A6050629618B7E00F48E90 /* NetworkPlugin.swift in Sources */,
 				23F6E32F2848E8E4009643C5 /* Man.swift in Sources */,
 				23F6E3372848EF4C009643C5 /* PageContentView.swift in Sources */,
 				23F6E0F628477FE7009643C5 /* ListCell.swift in Sources */,
 				23F6E0E628474B8F009643C5 /* UIImage+Extension.swift in Sources */,
 				233D20DA2857240A00F41302 /* Chinese.swift in Sources */,
 				23F6E3412849AB7C009643C5 /* Notification.swift in Sources */,
+				23A6050E2961910100F48E90 /* NetworkViewController.swift in Sources */,
 				23F6E32B2848E800009643C5 /* LazyLoadingViewController.swift in Sources */,
 				23BDD26E2859B618008B69AA /* RxSwiftTableViewController3.swift in Sources */,
 				23F6E0E428474B8F009643C5 /* UILabel+Extension.swift in Sources */,
@@ -1336,6 +1359,8 @@
 				23F6E33F2849AA44009643C5 /* GlobalConfig.swift in Sources */,
 				23F6E0F428477891009643C5 /* ListViewController.swift in Sources */,
 				23BDD2722859B77A008B69AA /* RxSwiftTableViewController5.swift in Sources */,
+				23A6050429618B5100F48E90 /* NetworkAPI.swift in Sources */,
+				23A6050829618BAC00F48E90 /* NetworkResult.swift in Sources */,
 				23F6E0F828478542009643C5 /* ListEntity.swift in Sources */,
 				23F6E0F2284773F4009643C5 /* String+Extensions.swift in Sources */,
 				23F6E0E328474B8F009643C5 /* UIColor+Extension.swift in Sources */,
@@ -1350,6 +1375,7 @@
 				23F6E0E528474B8F009643C5 /* UIButton+Extension.swift in Sources */,
 				23BDD2802859E0E1008B69AA /* RxSwiftTableViewController10.swift in Sources */,
 				23F6E11228486055009643C5 /* Person.swift in Sources */,
+				23A6050A29618BCE00F48E90 /* NetworkManager.swift in Sources */,
 				23A19B012858831F0033D654 /* Shakeable.swift in Sources */,
 				238B37C528695DC000A58CBC /* MoyaUseViewController.swift in Sources */,
 				23A19ABC285863FE0033D654 /* Counter.swift in Sources */,
