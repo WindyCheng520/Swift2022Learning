@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23183DED29AE2A6B0068793D /* OEMTheme.zip */; };
 		233D20DA2857240A00F41302 /* Chinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20D92857240A00F41302 /* Chinese.swift */; };
 		233D20DE28575F4A00F41302 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20DD28575F4A00F41302 /* ListItem.swift */; };
 		233D20E12857601900F41302 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E02857601900F41302 /* ListItem.m */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		06B15D4B4D85B21C81A2696C /* Pods-NewSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-NewSwiftDemo/Pods-NewSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		23183DED29AE2A6B0068793D /* OEMTheme.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OEMTheme.zip; sourceTree = "<group>"; };
 		233D20D92857240A00F41302 /* Chinese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chinese.swift; sourceTree = "<group>"; };
 		233D20DB2857340800F41302 /* Stack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stack.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		233D20DC2857597A00F41302 /* OperatorOverloading.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperatorOverloading.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -647,6 +649,7 @@
 			children = (
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
 				23BDD2822859E772008B69AA /* test.txt */,
+				23183DED29AE2A6B0068793D /* OEMTheme.zip */,
 				23F6E0C428473BDA009643C5 /* ViewController.swift */,
 				238B37A42860747B00A58CBC /* GoF 经典设计模式的 Swift 实现 */,
 				23F6E25F28488FE6009643C5 /* Play-with-Swift-5.1 */,
@@ -1257,6 +1260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */,
+				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
 				23F6E0CA28473BDC009643C5 /* Assets.xcassets in Resources */,
