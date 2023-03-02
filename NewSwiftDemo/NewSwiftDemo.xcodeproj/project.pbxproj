@@ -36,6 +36,7 @@
 		23A6050A29618BCE00F48E90 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050929618BCE00F48E90 /* NetworkManager.swift */; };
 		23A6050C29618C6900F48E90 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050B29618C6900F48E90 /* LoginModel.swift */; };
 		23A6050E2961910100F48E90 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A6050D2961910100F48E90 /* NetworkViewController.swift */; };
+		23B9508C29B11AFA002FE498 /* dmoea.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23B9508B29B11AFA002FE498 /* dmoea.zip */; };
 		23BDD26C2859B324008B69AA /* RxSwiftTableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26B2859B324008B69AA /* RxSwiftTableViewController2.swift */; };
 		23BDD26E2859B618008B69AA /* RxSwiftTableViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26D2859B618008B69AA /* RxSwiftTableViewController3.swift */; };
 		23BDD2702859B76E008B69AA /* RxSwiftTableViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD26F2859B76E008B69AA /* RxSwiftTableViewController4.swift */; };
@@ -190,6 +191,7 @@
 		23A6050929618BCE00F48E90 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		23A6050B29618C6900F48E90 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		23A6050D2961910100F48E90 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		23B9508B29B11AFA002FE498 /* dmoea.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = dmoea.zip; sourceTree = "<group>"; };
 		23BDD26B2859B324008B69AA /* RxSwiftTableViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController2.swift; sourceTree = "<group>"; };
 		23BDD26D2859B618008B69AA /* RxSwiftTableViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController3.swift; sourceTree = "<group>"; };
 		23BDD26F2859B76E008B69AA /* RxSwiftTableViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTableViewController4.swift; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 				23BDD2822859E772008B69AA /* test.txt */,
 				23183DED29AE2A6B0068793D /* OEMTheme.zip */,
 				23F6E0C428473BDA009643C5 /* ViewController.swift */,
+				23B9508B29B11AFA002FE498 /* dmoea.zip */,
 				23ED2F9829B0F47E00EE5539 /* chm.zip */,
 				238B37A42860747B00A58CBC /* GoF 经典设计模式的 Swift 实现 */,
 				23F6E25F28488FE6009643C5 /* Play-with-Swift-5.1 */,
@@ -1266,6 +1269,7 @@
 				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
 				23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */,
+				23B9508C29B11AFA002FE498 /* dmoea.zip in Resources */,
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
 				23F6E0CA28473BDC009643C5 /* Assets.xcassets in Resources */,
 				23F6E0FA28478E64009643C5 /* ListViewController.xib in Resources */,
