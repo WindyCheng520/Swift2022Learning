@@ -48,6 +48,7 @@
 		23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BDD27D2859D1E2008B69AA /* RxSwift.storyboard */; };
 		23BDD2802859E0E1008B69AA /* RxSwiftTableViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD27F2859E0E1008B69AA /* RxSwiftTableViewController10.swift */; };
 		23BDD2832859E772008B69AA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23BDD2822859E772008B69AA /* test.txt */; };
+		23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23ED2F9829B0F47E00EE5539 /* chm.zip */; };
 		23F6E0C128473BDA009643C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C028473BDA009643C5 /* AppDelegate.swift */; };
 		23F6E0C528473BDA009643C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C428473BDA009643C5 /* ViewController.swift */; };
 		23F6E0C828473BDA009643C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F6E0C628473BDA009643C5 /* Main.storyboard */; };
@@ -227,6 +228,7 @@
 		23BDD29C285EF17F008B69AA /* Alamofire001.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire001.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23BDD29D285F0216008B69AA /* Alamofire002.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire002.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23BDD29E285F03A0008B69AA /* Alamofire003.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire003.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		23ED2F9829B0F47E00EE5539 /* chm.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = chm.zip; sourceTree = "<group>"; };
 		23F6E0BD28473BDA009643C5 /* NewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F6E0C028473BDA009643C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23F6E0C428473BDA009643C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 				23BDD2822859E772008B69AA /* test.txt */,
 				23183DED29AE2A6B0068793D /* OEMTheme.zip */,
 				23F6E0C428473BDA009643C5 /* ViewController.swift */,
+				23ED2F9829B0F47E00EE5539 /* chm.zip */,
 				238B37A42860747B00A58CBC /* GoF 经典设计模式的 Swift 实现 */,
 				23F6E25F28488FE6009643C5 /* Play-with-Swift-5.1 */,
 				23F6E1022848542B009643C5 /* PlayGround */,
@@ -1262,6 +1265,7 @@
 				23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */,
 				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
+				23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */,
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
 				23F6E0CA28473BDC009643C5 /* Assets.xcassets in Resources */,
 				23F6E0FA28478E64009643C5 /* ListViewController.xib in Resources */,
