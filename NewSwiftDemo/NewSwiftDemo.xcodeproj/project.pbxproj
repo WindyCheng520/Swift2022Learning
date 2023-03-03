@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23183DED29AE2A6B0068793D /* OEMTheme.zip */; };
+		233C10D729B2404800C1C44D /* Mydemo.zip in Resources */ = {isa = PBXBuildFile; fileRef = 233C10D629B2404800C1C44D /* Mydemo.zip */; };
 		233D20DA2857240A00F41302 /* Chinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20D92857240A00F41302 /* Chinese.swift */; };
 		233D20DE28575F4A00F41302 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20DD28575F4A00F41302 /* ListItem.swift */; };
 		233D20E12857601900F41302 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E02857601900F41302 /* ListItem.m */; };
@@ -98,6 +99,7 @@
 /* Begin PBXFileReference section */
 		06B15D4B4D85B21C81A2696C /* Pods-NewSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-NewSwiftDemo/Pods-NewSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		23183DED29AE2A6B0068793D /* OEMTheme.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OEMTheme.zip; sourceTree = "<group>"; };
+		233C10D629B2404800C1C44D /* Mydemo.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Mydemo.zip; sourceTree = "<group>"; };
 		233D20D92857240A00F41302 /* Chinese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chinese.swift; sourceTree = "<group>"; };
 		233D20DB2857340800F41302 /* Stack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stack.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		233D20DC2857597A00F41302 /* OperatorOverloading.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperatorOverloading.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -668,6 +670,7 @@
 				23F6E3282848E77C009643C5 /* FollowCourseViewController.swift */,
 				23F6E33C2849A11F009643C5 /* TableViewController.swift */,
 				23F6E32A2848E800009643C5 /* LazyLoadingViewController.swift */,
+				233C10D629B2404800C1C44D /* Mydemo.zip */,
 				23F6E32C2848E83C009643C5 /* DemoLabel.swift */,
 				23F6E3202848E3BB009643C5 /* BreakRecycleViewController.swift */,
 				23F6E3222848E432009643C5 /* GCDViewController.swift */,
@@ -1268,6 +1271,7 @@
 				23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */,
 				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
+				233C10D729B2404800C1C44D /* Mydemo.zip in Resources */,
 				23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */,
 				23B9508C29B11AFA002FE498 /* dmoea.zip in Resources */,
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
