@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23183DED29AE2A6B0068793D /* OEMTheme.zip */; };
 		233C10D729B2404800C1C44D /* Mydemo.zip in Resources */ = {isa = PBXBuildFile; fileRef = 233C10D629B2404800C1C44D /* Mydemo.zip */; };
+		233C115929C33E2E00C1C44D /* MSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 233C114E29C33E2E00C1C44D /* MSLocationManager.m */; };
+		233C115A29C33E2E00C1C44D /* OEMLocationAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233C114F29C33E2E00C1C44D /* OEMLocationAlertViewController.m */; };
+		233C115B29C33E2E00C1C44D /* MSBLEOpenAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 233C115529C33E2E00C1C44D /* MSBLEOpenAlertView.m */; };
+		233C115C29C33E2E00C1C44D /* MSBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 233C115629C33E2E00C1C44D /* MSBLEManager.m */; };
+		233C115D29C33E2E00C1C44D /* OEMBLEAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233C115829C33E2E00C1C44D /* OEMBLEAlertViewController.m */; };
+		233C115F29C33E7B00C1C44D /* MideaOEMPodfile in Resources */ = {isa = PBXBuildFile; fileRef = 233C115E29C33E7B00C1C44D /* MideaOEMPodfile */; };
+		233C116129C33F4200C1C44D /* MeijuPodfile in Resources */ = {isa = PBXBuildFile; fileRef = 233C116029C33F4200C1C44D /* MeijuPodfile */; };
 		233D20DA2857240A00F41302 /* Chinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20D92857240A00F41302 /* Chinese.swift */; };
 		233D20DE28575F4A00F41302 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20DD28575F4A00F41302 /* ListItem.swift */; };
 		233D20E12857601900F41302 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E02857601900F41302 /* ListItem.m */; };
@@ -100,6 +107,18 @@
 		06B15D4B4D85B21C81A2696C /* Pods-NewSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewSwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-NewSwiftDemo/Pods-NewSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		23183DED29AE2A6B0068793D /* OEMTheme.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OEMTheme.zip; sourceTree = "<group>"; };
 		233C10D629B2404800C1C44D /* Mydemo.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Mydemo.zip; sourceTree = "<group>"; };
+		233C114E29C33E2E00C1C44D /* MSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLocationManager.m; sourceTree = "<group>"; };
+		233C114F29C33E2E00C1C44D /* OEMLocationAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEMLocationAlertViewController.m; sourceTree = "<group>"; };
+		233C115029C33E2E00C1C44D /* MSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLocationManager.h; sourceTree = "<group>"; };
+		233C115129C33E2E00C1C44D /* OEMLocationAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEMLocationAlertViewController.h; sourceTree = "<group>"; };
+		233C115329C33E2E00C1C44D /* MSBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBLEManager.h; sourceTree = "<group>"; };
+		233C115429C33E2E00C1C44D /* OEMBLEAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEMBLEAlertViewController.h; sourceTree = "<group>"; };
+		233C115529C33E2E00C1C44D /* MSBLEOpenAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBLEOpenAlertView.m; sourceTree = "<group>"; };
+		233C115629C33E2E00C1C44D /* MSBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBLEManager.m; sourceTree = "<group>"; };
+		233C115729C33E2E00C1C44D /* MSBLEOpenAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBLEOpenAlertView.h; sourceTree = "<group>"; };
+		233C115829C33E2E00C1C44D /* OEMBLEAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OEMBLEAlertViewController.m; sourceTree = "<group>"; };
+		233C115E29C33E7B00C1C44D /* MideaOEMPodfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MideaOEMPodfile; sourceTree = "<group>"; };
+		233C116029C33F4200C1C44D /* MeijuPodfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MeijuPodfile; sourceTree = "<group>"; };
 		233D20D92857240A00F41302 /* Chinese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chinese.swift; sourceTree = "<group>"; };
 		233D20DB2857340800F41302 /* Stack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stack.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		233D20DC2857597A00F41302 /* OperatorOverloading.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OperatorOverloading.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -492,6 +511,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233C114D29C33E2E00C1C44D /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				233C114E29C33E2E00C1C44D /* MSLocationManager.m */,
+				233C114F29C33E2E00C1C44D /* OEMLocationAlertViewController.m */,
+				233C115029C33E2E00C1C44D /* MSLocationManager.h */,
+				233C115129C33E2E00C1C44D /* OEMLocationAlertViewController.h */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		233C115229C33E2E00C1C44D /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				233C115329C33E2E00C1C44D /* MSBLEManager.h */,
+				233C115429C33E2E00C1C44D /* OEMBLEAlertViewController.h */,
+				233C115529C33E2E00C1C44D /* MSBLEOpenAlertView.m */,
+				233C115629C33E2E00C1C44D /* MSBLEManager.m */,
+				233C115729C33E2E00C1C44D /* MSBLEOpenAlertView.h */,
+				233C115829C33E2E00C1C44D /* OEMBLEAlertViewController.m */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
 		235DE9EB2856DC7300EA17FA /* 第一部分 */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,9 +697,13 @@
 			isa = PBXGroup;
 			children = (
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
+				233C115229C33E2E00C1C44D /* BLE */,
+				233C114D29C33E2E00C1C44D /* Location */,
 				23BDD2822859E772008B69AA /* test.txt */,
 				23183DED29AE2A6B0068793D /* OEMTheme.zip */,
 				23F6E0C428473BDA009643C5 /* ViewController.swift */,
+				233C116029C33F4200C1C44D /* MeijuPodfile */,
+				233C115E29C33E7B00C1C44D /* MideaOEMPodfile */,
 				23B9508B29B11AFA002FE498 /* dmoea.zip */,
 				23ED2F9829B0F47E00EE5539 /* chm.zip */,
 				238B37A42860747B00A58CBC /* GoF 经典设计模式的 Swift 实现 */,
@@ -1273,8 +1320,10 @@
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
 				233C10D729B2404800C1C44D /* Mydemo.zip in Resources */,
 				23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */,
+				233C116129C33F4200C1C44D /* MeijuPodfile in Resources */,
 				23B9508C29B11AFA002FE498 /* dmoea.zip in Resources */,
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
+				233C115F29C33E7B00C1C44D /* MideaOEMPodfile in Resources */,
 				23F6E0CA28473BDC009643C5 /* Assets.xcassets in Resources */,
 				23F6E0FA28478E64009643C5 /* ListViewController.xib in Resources */,
 				23F6E33B2848F042009643C5 /* DemoTableViewCell.xib in Resources */,
@@ -1340,6 +1389,7 @@
 				23F6E0E228474B8F009643C5 /* UIImageView+Extension.swift in Sources */,
 				23F6E0EF28474DBD009643C5 /* Common.swift in Sources */,
 				23BDD26C2859B324008B69AA /* RxSwiftTableViewController2.swift in Sources */,
+				233C115B29C33E2E00C1C44D /* MSBLEOpenAlertView.m in Sources */,
 				233D20E4285767D900F41302 /* ListModel.swift in Sources */,
 				23F6E0DA2847488C009643C5 /* QuickSortViewController.m in Sources */,
 				23F6E11028485F82009643C5 /* UITextField+Extension.swift in Sources */,
@@ -1357,12 +1407,14 @@
 				23F6E31F2848E2FB009643C5 /* FuntionViewController.swift in Sources */,
 				23BDD2742859BAFC008B69AA /* RxSwiftTableViewController6.swift in Sources */,
 				23A19B0D285974F40033D654 /* Music.swift in Sources */,
+				233C115929C33E2E00C1C44D /* MSLocationManager.m in Sources */,
 				23F6E3272848E67A009643C5 /* Student.swift in Sources */,
 				23BDD27A2859CDA4008B69AA /* RxSwiftTableViewController9.swift in Sources */,
 				23F6E0D728473F78009643C5 /* SortViewController.m in Sources */,
 				23A6050629618B7E00F48E90 /* NetworkPlugin.swift in Sources */,
 				23F6E32F2848E8E4009643C5 /* Man.swift in Sources */,
 				23F6E3372848EF4C009643C5 /* PageContentView.swift in Sources */,
+				233C115C29C33E2E00C1C44D /* MSBLEManager.m in Sources */,
 				23F6E0F628477FE7009643C5 /* ListCell.swift in Sources */,
 				23F6E0E628474B8F009643C5 /* UIImage+Extension.swift in Sources */,
 				233D20DA2857240A00F41302 /* Chinese.swift in Sources */,
@@ -1401,7 +1453,9 @@
 				23A19B172859A70F0033D654 /* RxSwiftTableViewController1.swift in Sources */,
 				23F6E0C128473BDA009643C5 /* AppDelegate.swift in Sources */,
 				23F6E3232848E432009643C5 /* GCDViewController.swift in Sources */,
+				233C115D29C33E2E00C1C44D /* OEMBLEAlertViewController.m in Sources */,
 				233D20DE28575F4A00F41302 /* ListItem.swift in Sources */,
+				233C115A29C33E2E00C1C44D /* OEMLocationAlertViewController.m in Sources */,
 				23F6E33A2848F042009643C5 /* DemoTableViewCell.swift in Sources */,
 				23F6E3292848E77C009643C5 /* FollowCourseViewController.swift in Sources */,
 				238B37C128695D2500A58CBC /* HJNet.swift in Sources */,

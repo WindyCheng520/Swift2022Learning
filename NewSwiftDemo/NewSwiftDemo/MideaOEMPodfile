@@ -1,0 +1,368 @@
+use_frameworks!
+workspace 'MSOEM'
+platform :ios, '11.0'
+
+#source 'http://git.midea.com/IT-MobileDivision/MideaComponents/ios/MideaSpec.git'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'http://git.midea.com/oem-iot-group/iOS/OEMSpec.git'
+
+#source 'https://gitee.com/foxvail/githubspecs.git' #国内备用公共库,降低下载失败概率
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#需要改为静态库的列表，注意名字不能有下划线等这些特殊字符，不然会有问题
+#static_frameworks = Array['AvoidCrash', 'GCanvas', 'WeexGcanvas', 'YYText', 'YYImage', 'YYWebImage', 'YYCache', 'lottie-ios', 'Lottie', 'BindingX', 'SocketRocket', 'SDWebImage', 'BHMOA', 'CocoaLumberjack', 'FLAnimatedImage', 'SSZipArchive', 'TZImagePickerController', 'YBImageBrowser', 'nanopb', 'RealReachability', 'MJRefresh', 'HHTransition', 'GoogleUtilities', 'DolphinRouter', 'DolphinFramework', 'DolphinPerformance', 'Masonry', 'MBProgressHUD', 'MJExtension', 'WeexSDK', 'WXDevtool', 'AFNetworking', 'BHCodeScan', 'FMDB', 'BHJSBridge', 'FBLPromises']
+
+dyld_frameworks = Array['Charts']
+
+pre_install do |installer|
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+  #把第三方库改成静态库
+
+  installer.pod_targets.each do |pod|
+#    if static_frameworks.include?(pod.name)
+    if !dyld_frameworks.include?(pod.name)
+      #puts "Overriding the static_framework? method for #{pod.name}"
+      #注意cocoapods 1.7.3以下是static_framework
+      def pod.build_as_static_framework?;
+         true
+      end
+      def pod.build_type;
+        if Gem::Version.new(Pod::VERSION) >= Gem::Version.new('1.9.0')
+           BuildType.static_framework
+        else
+           Pod::Target::BuildType.static_framework
+        end
+      end
+      def pod.static_framework?;
+         true
+      end
+    end
+  end
+
+end
+
+install! 'cocoapods', :deterministic_uuids => false
+
+$CodeBranch = 'develop'
+
+#组件库的根路径
+$BaseUrl = 'http://git.midea.com/oem-iot-group/iOS/'
+$ComponentUrl = 'http://git.midea.com/oem-iot-group/iOS/'
+
+#第三方组件
+def common
+
+  pod 'Masonry', :inhibit_warnings => true
+  pod 'FMDB', :inhibit_warnings => true
+  pod 'SDWebImage',:inhibit_warnings => true
+ # pod 'SDWebImage/GIF'
+  pod 'FLAnimatedImage'
+ 
+  pod 'lottie-ios', '~> 2.5.3', :inhibit_warnings => true
+  pod 'AvoidCrash', '~> 2.5.2.1009', :configuration => ['UAT', 'AppStore', 'PROD']
+  pod 'MBProgressHUD', '~> 1.1.0.1', :inhibit_warnings => true
+ 
+  
+  pod 'MJExtension', '~> 3.0.17', :inhibit_warnings => true
+  pod 'HHTransition', '~> 1.2.1001', :inhibit_warnings => true
+  pod 'YYText', '~> 1.0.7', :inhibit_warnings => true
+  pod 'YYWebImage', '~> 1.0.5', :inhibit_warnings => true
+  pod 'MJRefresh', '3.7.2'
+  pod 'FBSDKLoginKit', '12.2.0'
+  #pod 'TwitterKit' , '3.4.2'
+  pod 'SnapKit', '4.2.0'
+  pod 'FirebasePerformance'
+  #pod 'TwitterCore', '9.3.2.0'
+  #pod 'iflyMSC', '1.0.1115'
+  #pod 'Charts', :inhibit_warnings => true, :git => 'http://git.midea.com/IT-MobileDivision/ThirdPlatformCode/ThirdPlatformCode-iOS/Chart-Midea.git', :branch => 'master'
+end
+
+$useLocalRepositories=true
+
+#业务组件
+def businessComponents
+  
+  if $useLocalRepositories
+    pod 'MSHome', :path => '../OEMHome'
+    pod 'MSDevice', :path => '../OEMDevice'
+    pod 'MSLogin', :path => '../OEMLogin'
+    pod 'MSMine', :path => '../OEMMine'
+    pod 'MSBusiness', :path => '../OEMBusiness'
+    pod 'MSMessageCenter', :path => '../OEMMessageCenter'
+    pod 'OEMBluetooth', :path => '../OEMBluetooth'
+    pod 'MSReactNative', :path => '../OEMReactNative'
+    pod 'OEMTheme', :path => '../OEMTheme'
+    pod 'OEMLogger', :path => '../OEMLogger'
+  else
+    pod 'MSHome', :git => $ComponentUrl + 'OEMHome.git',:branch => $CodeBranch
+    pod 'MSDevice', :git => $ComponentUrl + 'OEMDevice.git',:branch => $CodeBranch
+    pod 'MSLogin', :git => $ComponentUrl + 'OEMLogin.git',:branch => $CodeBranch
+    pod 'MSMine', :git => $ComponentUrl + 'OEMMine.git',:branch => $CodeBranch
+    pod 'MSBusiness', :git => $ComponentUrl + 'OEMBusiness.git',:branch => $CodeBranch
+    pod 'MSMessageCenter', :git => $ComponentUrl + 'OEMMessageCenter.git',:branch => $CodeBranch
+    pod 'OEMBluetooth', :git => $BaseUrl + 'OEMBluetooth.git',:branch => $CodeBranch
+    pod 'MSReactNative', :git => $BaseUrl + 'OEMReactNative.git',:branch => $CodeBranch
+    pod 'OEMTheme', :git => $BaseUrl + 'OEMTheme.git',:branch => $CodeBranch
+    pod 'OEMLogger', :git => $BaseUrl + 'OEMLogger.git',:branch => $CodeBranch
+  end
+  pod 'MideaNetConfigSDK', :git => 'http://git.midea.com/oem-iot-group/iOS/OEMMideaNetConfigSDK', :branch =>'develop'
+  pod 'AWSIoT', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/aws-sdk-ios.git', :branch =>'develop'
+  pod 'AWSCore', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/aws-sdk-ios.git', :branch =>'develop'
+  pod 'BHCodeScan', :git => $BaseUrl + 'BHCodeScan.git',:branch => 'develop'
+  pod 'TZImagePickerController', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/TZImagePickerController',:branch=>'develop'
+
+end
+
+#基础组件
+def baseComponents
+  if $useLocalRepositories
+    pod 'DolphinRouter', :path => '../Dolphinrouter'
+    pod 'OEMFoundation', :path => '../OEMFoundation'
+  else
+    pod 'DolphinRouter', :git =>  $BaseUrl + 'Dolphinrouter.git', :branch =>$CodeBranch
+    pod 'OEMFoundation', :git => $ComponentUrl + 'OEMFoundation.git',:branch => $CodeBranch
+  end
+end
+
+def meiju_project_config
+  common
+  businessComponents
+  baseComponents
+end
+
+def use_react_native! (options={})
+  # The prefix to react-native
+  cachedir = "node_module_cache/node_modules"
+  prefix = options[:path] ||= "#{cachedir}/react-native"
+
+  # Include Fabric dependencies
+  fabric_enabled = options[:fabric_enabled] ||= false
+
+  # Include DevSupport dependency
+  production = options[:production] ||= false
+
+  # Include Hermes dependencies
+  hermes_enabled = options[:hermes_enabled] ||= false
+
+  fabric_enabled = false
+  production = false
+  hermes_enabled = false
+
+  # The Pods which should be included in all projects
+  pod 'FBLazyVector', :path => "#{prefix}/Libraries/FBLazyVector"
+  pod 'FBReactNativeSpec', :path => "#{prefix}/React/FBReactNativeSpec"
+  pod 'RCTRequired', :path => "#{prefix}/Libraries/RCTRequired"
+  pod 'RCTTypeSafety', :path => "#{prefix}/Libraries/TypeSafety"
+  pod 'React', :path => "#{prefix}/"
+  pod 'React-Core', :path => "#{prefix}/"
+  pod 'React-RCTActionSheet', :path => "#{prefix}/Libraries/ActionSheetIOS"
+  pod 'React-RCTAnimation', :path => "#{prefix}/Libraries/NativeAnimation"
+  pod 'React-RCTBlob', :path => "#{prefix}/Libraries/Blob"
+  pod 'React-RCTImage', :path => "#{prefix}/Libraries/Image"
+  pod 'React-RCTLinking', :path => "#{prefix}/Libraries/LinkingIOS"
+  pod 'React-RCTNetwork', :path => "#{prefix}/Libraries/Network"
+  pod 'React-RCTSettings', :path => "#{prefix}/Libraries/Settings"
+  pod 'React-RCTVibration', :path => "#{prefix}/Libraries/Vibration"
+  pod 'React-Core/RCTWebSocket', :path => "#{prefix}/"
+  pod 'react-native-safe-area-context', :path => "#{cachedir}/react-native-safe-area-context"
+  pod 'BVLinearGradient', :path => "#{cachedir}/react-native-linear-gradient"
+  pod 'RNGestureHandler', :path => "#{cachedir}/react-native-gesture-handler"
+  pod 'RNCPicker', :path => "#{cachedir}/@react-native-picker/picker"
+  pod 'RNSVG', :path => "#{cachedir}/react-native-svg"
+  pod 'react-native-pager-view', :path => "#{cachedir}/react-native-pager-view"
+  pod 'react-native-restart', :path => "#{cachedir}/react-native-restart"
+  pod 'react-native-blur', :path => "#{cachedir}/@react-native-community/blur"
+  
+
+  #pod 'RNVectorIcons', :path => "#{cachedir}/react-native-vector-icons"
+  #pod 'RNOemBridgee', :path => "#{cachedir}/react-native-oem-bridge"
+  #pod 'RNI18n', :path => "#{cachedir}/react-native-i18n"
+  #pod 'RNScreens', :path => "#{cachedir}/react-native-screens"
+  
+  pod 'React-RCTText', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/react-rcttext.git', :branch => 'master'
+  pod 'RNScreens', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/react-native-screens.git', :branch => 'master'
+  pod 'react-native-webview', :git => 'http://git.midea.com/oem-iot-group/iOS/oemiospods/react-native-webview.git', :branch => 'develop'
+  pod 'React-CoreModules', :git => "http://git.midea.com/oem-iot-group/iOS/oemiospods/react-coremodules.git", :branch => 'develop'
+  unless production
+    pod 'React-Core/DevSupport', :path => "#{prefix}/"
+  end
+
+  pod 'React-cxxreact', :path => "#{prefix}/ReactCommon/cxxreact"
+  pod 'React-jsi', :path => "#{prefix}/ReactCommon/jsi"
+  pod 'React-jsiexecutor', :path => "#{prefix}/ReactCommon/jsiexecutor"
+  pod 'React-jsinspector', :path => "#{prefix}/ReactCommon/jsinspector"
+  pod 'React-callinvoker', :path => "#{prefix}/ReactCommon/callinvoker"
+  pod 'React-runtimeexecutor', :path => "#{prefix}/ReactCommon/runtimeexecutor"
+  pod 'React-perflogger', :path => "#{prefix}/ReactCommon/reactperflogger"
+  pod 'ReactCommon/turbomodule/core', :path => "#{prefix}/ReactCommon"
+  pod 'Yoga', :path => "#{prefix}/ReactCommon/yoga", :modular_headers => true
+
+  pod 'DoubleConversion', :podspec => "#{prefix}/third-party-podspecs/DoubleConversion.podspec"
+  pod 'glog', :podspec => "#{prefix}/third-party-podspecs/glog.podspec"
+  pod 'RCT-Folly', :podspec => "#{prefix}/third-party-podspecs/RCT-Folly.podspec"
+
+  if fabric_enabled
+    pod 'React-Fabric', :path => "#{prefix}/ReactCommon"
+    pod 'React-graphics', :path => "#{prefix}/ReactCommon/react/renderer/graphics"
+    pod 'React-jsi/Fabric', :path => "#{prefix}/ReactCommon/jsi"
+    pod 'React-RCTFabric', :path => "#{prefix}/React"
+    pod 'RCT-Folly/Fabric', :podspec => "#{prefix}/third-party-podspecs/RCT-Folly.podspec"
+  end
+
+  if hermes_enabled
+    pod 'React-Core/Hermes', :path => "#{prefix}/"
+    pod 'hermes-engine', '~> 0.7.2'
+    pod 'libevent', '~> 2.1.12'
+  end
+end
+
+target 'MSOEM' do
+  meiju_project_config
+  use_react_native!
+  #???: 静态库不支持configuration配置
+  #pod 'Firebase', :subspecs => ['Analytics', 'Crashlytics']
+  
+  #性能组件
+  
+  if $useLocalRepositories
+    pod 'DolphinPerformance', :path => '../DolphinPerformance', :configuration => ['Debug', 'Development', 'Test']
+  else
+    pod 'DolphinPerformance', :git => $BaseUrl + 'Dolphinperformance.git', :branch => $CodeBranch, :configuration => ['Debug', 'Development', 'Test']
+  end
+
+
+end
+
+target 'MSOEM-infer' do
+  meiju_project_config
+  use_react_native!
+end
+
+#https://guides.cocoapods.org/syntax/podfile.html#project
+#1.没有必要指定Pods链接到MSOEM.xcodeprjo,因为只有一个xcodeprjo
+#2.'Debug_WhereEver'=>:debug仅仅是在Pods的子targets增加一个名为Debug_WhereEver的配置，所以没必要使用project关键字
+#project 'MSOEM', 'Debug'=>:debug, 'Debug_Pro'=>:debug, 'Debug_Infer'=>:debug, , 'Debug_WhereEver'=>:debug
+
+$Global_needSecModule = Array[
+  'MSOEM',
+  'DolphinRouter',
+  'MSBusiness',
+  'MSDevice',
+  'MSHome',
+  'MSLogin',
+  'MSMine',
+  'MSMessageCenter',
+  'OEMBluetooth',
+  'MSReactNative'
+]
+
+$secPhraseName = "sec script"
+
+def secPhrase(target, config)
+  #代码安全加固混淆等
+  if $Global_needSecModule.include?(target.name) and config.name == 'AppStore'
+    puts "----> add build config:" + config.name + " target:" + target.name
+    config.build_settings['OTHER_LDFLAGS'] ||= [
+    '$(inherited)',
+    '-kce-jail-debug-hook=233'
+    ]
+    
+    config.build_settings['OTHER_CFLAGS'] ||= [
+    '$(inherited)',
+    '-kce-mbs=1',
+    '-kce-mbs-chance=20',
+    '-kce-mbs-inst-chance=20',
+    '-kce-str=1',
+    '-kce-str-chance=100'
+    ]
+    
+    
+    # if $Global_needSecModule.include?(target.name)
+    #   phase = target.new_shell_script_build_phase($secPhraseName)
+    #   phase.shell_script = <<-EOF
+    #   if [ -f "$TOOLCHAIN_DIR/usr/bin/cp.sh" ]; then
+    #     $TOOLCHAIN_DIR/usr/bin/cp.sh
+    #   fi
+    #   EOF
+    # end
+    
+  end
+end
+
+def reArrangeBuild(target, config)
+  if $Global_needSecModule.include?(target.name) and config.name == 'AppStore'
+    target.build_phases.each do |build_phase|
+      if (build_phase.respond_to?(:name) && build_phase.name.eql?($secPhraseName))
+        puts "----> all " + target.build_phases.join(', ')
+        puts "----> will move phrase " + $secPhraseName + "of " + target.name + "to first"
+        target.build_phases.move(build_phase, 0)
+      end
+    end
+  end
+end
+
+#批量修改编译参数
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+
+    #遍历每个依赖target的配置
+    target.build_configurations.each do |config|
+      #宏传递时，主target也记得设置一下, 貌似cocoapods没啥手段直接设置主project的GCC_PREPROCESSOR_DEFINITIONS
+      if config.name == 'AppStore'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+          '$(inherited)',
+          'AppStore_ENV=1',
+          'SupressNSLog=1'
+          ]
+          config.build_settings['VALID_ARCHS'] = 'arm64'
+      elsif config.name == 'UAT'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+          '$(inherited)',
+          'AppStore_ENV=1',
+          'SupressNSLog=1',
+          'UAT_ENV=1'
+          ]
+        config.build_settings['VALID_ARCHS'] = 'arm64'
+      elsif config.name == 'PROD'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+          '$(inherited)',
+          'AppStore_ENV=1',
+          'SupressNSLog=1',
+          'UAT_ENV=0'
+          ]
+        config.build_settings['VALID_ARCHS'] = 'arm64'
+      else
+          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+          '$(inherited)',
+          'AppStore_ENV=0',
+          'SupressNSLog=0'
+          ]
+          config.build_settings['VALID_ARCHS'] = 'arm64 x86_64'
+      end
+  
+      #见函数说明
+      secPhrase target, config
+
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
+      config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+      config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = 'NO'
+      
+    end
+
+    #解决workspace 设置为New Build System导致的 Cycle in dependencies between targets 'FBReactNativeSpec问题
+    #https://github.com/facebook/react-native/issues/31034 把[CP-User] Generate Specs编译过程移到最前
+    if (target.name&.eql?('FBReactNativeSpec'))
+      target.build_phases.each do |build_phase|
+        if (build_phase.respond_to?(:name) && build_phase.name.eql?('[CP-User] Generate Specs'))
+          target.build_phases.move(build_phase, 0)
+        end
+    end
+
+  end
+
+    # target.build_configurations.each do |config|
+    #   reArrangeBuild target, config
+    # end  
+
+  end
+end

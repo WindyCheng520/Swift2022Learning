@@ -1,0 +1,518 @@
+use_frameworks!
+workspace 'meiju-ios'
+platform :ios, '9.0'
+
+source 'http://git.midea.com/IT-MobileDivision/MideaComponents/ios/MideaSpec.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+#需要改为静态库的列表，注意名字不能有下划线等这些特殊字符，不然会有问题
+static_frameworks = Array['ZipArchive', 'AvoidCrash', 'Aspects', 'CocoaAsyncSocket', 'GCanvas', 'WeexGcanvas', 'IQKeyboardManager', 'SAMKeychain', 'SDCycleScrollView', 'WebViewJavascriptBridge', 'WeexGcanvas', 'YYText', 'YYImage', 'YYWebImage', 'lottie-ios', 'Lottie', 'BindingX', 'SocketRocket']
+
+#需要几维加固组件库的列表
+kiwisec_frameworks = Array['BHSmartHome', 'BHBusiness', 'BHDeviceManager']
+
+pre_install do |installer|
+  # workaround for https://github.com/CocoaPods/CocoaPods/issues/3289
+  Pod::Installer::Xcode::TargetValidator.send(:define_method, :verify_no_static_framework_transitive_dependencies) {}
+  
+  #把第三方库改成静态库
+  installer.pod_targets.each do |pod|
+    if static_frameworks.include?(pod.name)
+      #puts "Overriding the static_framework? method for #{pod.name}"
+      #注意cocoapods 1.7.3以下是static_framework
+      def pod.build_as_static_framework?;
+         true
+      end
+      def pod.build_type;
+        if Gem::Version.new(Pod::VERSION) >= Gem::Version.new('1.9.0')
+           BuildType.static_framework
+        else
+           Pod::Target::BuildType.static_framework
+        end
+      end
+      def pod.static_framework?;
+         true
+      end
+    end
+  end
+end
+
+install! 'cocoapods', :deterministic_uuids => false
+
+
+# 是否是开发模块，打AppStore包的时候需要改成false
+$meiju_project_config_is_dev = true
+
+#是否使用动态库开发，开启后将使用dynamicComponents内的配置
+$use_dynamic_dev = false
+
+# 是否需要几维加固，AppStore包需要，测试包不需要
+$project_is_need_kiwisec = false
+
+#组件分支
+$CodeBranch = 'dev'
+
+#pod版本前面的9表示引用Framework动态库仓库，否则引用源码仓库
+$DynamicLibVer = '9.7.3.0'
+
+#组件库的根路径
+$BaseUrl = 'http://git.midea.com/IT-MobileDivision/MideaComponents/ios/'
+#老的工程地质
+$BaseUrlOld = 'http://git.midea.com/IT-MobileDivision/MeiJu/MeiJuiOS/'
+
+#和小组件公共的第三方组件
+def publicCommon(pkgtype)
+if $meiju_project_config_is_dev
+  pod 'AFNetworking', '~> 9.3.2.1.1', :inhibit_warnings => true
+else
+  pod 'AFNetworking', '~> 3.2.1.1', :inhibit_warnings => true
+end
+  pod 'MJExtension', '~> 3.2.2', :inhibit_warnings => true
+  pod 'TZImagePickerController', '3.5.2', :inhibit_warnings => true
+  pod 'Masonry', :inhibit_warnings => true
+  pod 'FMDB', :inhibit_warnings => true
+  pod 'SDWebImage', '~> 5.10.2', :inhibit_warnings => true
+  # 固定SDCycleScrollView版本，BHSDCycleScrollView调用了里面的方法，避免升级后导致出错
+  pod 'SDCycleScrollView', '~> 1.82', :inhibit_warnings => true
+  pod 'SDWebImageWebPCoder', '~> 9.0.8.3', :inhibit_warnings => true
+  pod 'libwebp', '~> 9.1.2.0', :inhibit_warnings => true
+
+end
+
+#第三方组件
+def common(pkgtype)
+  publicCommon pkgtype
+  
+  #开发环境只是使用动态库加速编译
+if $meiju_project_config_is_dev
+  pod 'Charts','~> 9.3.3.0.1', :inhibit_warnings => true
+  pod 'WeexSDK', '~> 9.0.28.0', :inhibit_warnings => true
+  pod 'lottie-ios', '~> 9.2.5.3', :inhibit_warnings => true
+  pod 'BindingX', '~> 9.1.0.3', :inhibit_warnings => true
+else
+  pod 'Charts', :inhibit_warnings => true, :git => 'http://git.midea.com/IT-MobileDivision/ThirdPlatformCode/ThirdPlatformCode-iOS/Chart-Midea.git', :branch => 'master'
+  pod 'WeexSDK', '~> 0.28.0', :inhibit_warnings => true
+  pod 'lottie-ios', '~> 2.5.3', :inhibit_warnings => true
+  pod 'BindingX', '~> 1.0.3', :inhibit_warnings => true
+end
+
+#  pod 'AvoidCrash', :path => '../AvoidCrash-Midea'
+#  pod 'AvoidCrash', '~> 2.5.2.1', :inhibit_warnings => true
+  pod 'AvoidCrash', :inhibit_warnings => true, :git => 'http://git.midea.com/IT-MobileDivision/ThirdPlatformCode/ThirdPlatformCode-iOS/AvoidCrash-Midea.git', :branch => 'dev'
+  pod 'IQKeyboardManager', '6.1.1', :inhibit_warnings => true
+  pod 'FLAnimatedImage', :inhibit_warnings => true
+  pod 'AlicloudPush','~> 1.9.9', :inhibit_warnings => true
+#  pod 'AliyunOSSiOS','~> 2.10.8.1', :inhibit_warnings => true
+  
+#  pod 'WXDevtool', '0.24.0'
+  
+  pod 'WeexPluginLoader'
+  pod 'WeexGcanvas', '~> 1.1.0.2'
+  pod 'GCanvas', '~> 1.1.0.2', :inhibit_warnings => true
+
+  pod 'MBProgressHUD', '~> 1.1.0.1', :inhibit_warnings => true
+  pod 'iflyMSC', '1.0.1115'
+  
+  #pod 'MJExtension', '~> 3.0.17', :inhibit_warnings => true
+  pod 'HHTransition', '~> 1.2.1', :inhibit_warnings => true
+  pod 'MBProgressHUD', '~> 1.1.0.1', :inhibit_warnings => true
+  pod 'YYText', '~> 1.0.7', :inhibit_warnings => true
+  pod 'YYWebImage', '~> 1.0.5', :inhibit_warnings => true
+  pod 'CocoaAsyncSocket', '~> 7.6', :inhibit_warnings => true
+  pod 'Aspects', '~> 1.4', :inhibit_warnings => true
+  pod 'Reachability', '~> 3.2', :inhibit_warnings => true
+  pod 'ZipArchive', '~> 1.4', :inhibit_warnings => true
+  pod 'UITableView+FDTemplateLayoutCell', '~> 1.6', :inhibit_warnings => true
+  pod 'MJRefresh', '3.2.0'
+  pod 'WebViewJavascriptBridge', '6.0.3.1' #电商有使用
+  pod 'pgDybLiveMulti','1.40.0.42'
+  #数据监控
+  #pod 'tingyunApp'
+  pod 'YYImage',  :git => 'http://git.midea.com/IT-MobileDivision/ThirdPlatformCode/ThirdPlatformCode-iOS/yyimage.git', :branch => 'master'
+  pod 'YBImageBrowser', '~> 9.3.0.9', :inhibit_warnings => true
+#  pod 'Dynatrace', '~> 8.181'
+end
+
+#小组件公共
+def publicDynamicComponents(pkgtype)
+  #pod 'BHBusiness', :path => '../BHBusiness'
+  pod 'BHBusiness', '~> ' + $DynamicLibVer
+  pod 'BHLogin', '~> ' + $DynamicLibVer
+  pod 'DolphinFramework', '~> ' + $DynamicLibVer
+  pod 'MSmartSDK'
+end
+
+def dynamicComponents(pkgtype)
+  #公共组件
+  publicDynamicComponents pkgtype
+  
+  #业务组件
+  #pod 'BHBusiness','~> ' + $DynamicLibVer
+  pod 'BHSmartHome','~> ' + $DynamicLibVer
+  pod 'BHElectronicBusiness', '~> ' + $DynamicLibVer
+  pod 'BHMessageCenter', '~> ' + $DynamicLibVer
+  pod 'BHAIAudio','~> ' + $DynamicLibVer
+  pod 'BHMine', '~> ' + $DynamicLibVer
+  pod 'BHDeviceManager', '~> ' + $DynamicLibVer
+  pod 'BHH5Plugin', '~> ' + $DynamicLibVer
+  
+  pod 'BHComment', :path => '../BHComment'
+  #pod 'BHComment', '~> ' + $DynamicLibVer
+  #pod 'BHCookBook', :path => '../BHCookBook'
+  pod 'BHCookBook', '~> ' + $DynamicLibVer
+  pod 'BHWeex', '~> ' + $DynamicLibVer
+
+  pod 'BHOnlineService', '~> ' + $DynamicLibVer
+  pod 'BHXiaoMeiVoice', '~> ' + $DynamicLibVer
+  
+  #服务组件
+  pod 'BHBluetoothService', '~> ' + $DynamicLibVer
+  pod 'BHGateway', '~> ' + $DynamicLibVer
+  pod 'BHJDKepler', '~> ' + $DynamicLibVer
+  #BHKGMusic目前只在sit上线，待事业部提供正式的appid上uat
+  #    pod 'BHKGMusic', '~> ' + $DynamicLibVer
+  pod 'BHMOA','~> ' + $DynamicLibVer
+  pod 'BHMap','~> ' + $DynamicLibVer
+  pod 'BHPay', '~> ' + $DynamicLibVer
+  #pod 'BHShare', '~> ' + $DynamicLibVer
+  pod 'BHYSCamera', '~> ' + $DynamicLibVer
+  pod 'BHYB200Service','~> ' + $DynamicLibVer
+  pod 'BHQiHoo360','~> ' + $DynamicLibVer
+  pod 'BHCodeScan', '~> ' + $DynamicLibVer
+  
+  pod 'BHFamilyManager', '~> ' + $DynamicLibVer
+
+  pod 'BHAdvertManage', '~> ' + $DynamicLibVer
+  pod 'BHDiscoverBusiness', '~> ' + $DynamicLibVer
+  pod 'BHJSBridge', '~> ' + $DynamicLibVer
+  pod 'BHBaseCodeScan', '~> ' + $DynamicLibVer
+  pod 'BHDiscover', '~> ' + $DynamicLibVer
+  
+  #基础组件
+  #pod 'DolphinFramework', '~> ' + $DynamicLibVer
+  pod 'midea-common-jsbridge', '~> ' + $DynamicLibVer
+  pod 'DolphinPerformance', '~> ' + $DynamicLibVer
+#pod 'DolphinPerformance', :path => '../DolphinPerformance'
+  pod 'DolphinRouter', '~> ' + $DynamicLibVer
+end
+
+#业务组件
+def businessComponents(pkgtype)
+  # 电商业务模块
+  #pod 'BHElectronicBusiness', :path => '../BHElectronicBusiness'
+  pod 'BHElectronicBusiness', :git => $BaseUrlOld + 'BHElectronicBusiness.git', :branch => $CodeBranch
+  
+  # 智慧家居业务模块
+  pod 'BHSmartHome', :path => '../BHSmartHome'
+  #pod 'BHSmartHome', :git => $BaseUrlOld + 'BHSmartHome.git',:branch => $CodeBranch
+  
+  pod 'BHDeviceManager', :path => '../BHDeviceManager'
+  #pod 'BHDeviceManager', :git => $BaseUrl + 'BHDeviceManager.git', :branch => $CodeBranch
+  
+  #pod 'BHMessageCenter', :path => '../BHMessageCenter'
+  pod 'BHMessageCenter', :git => $BaseUrl + 'BHMessageCenter.git', :branch => $CodeBranch
+  
+#  pod 'BHAIAudio', :path => '../BHAIAudio'
+  pod 'BHAIAudio', :git => $BaseUrl + 'BHAIAudio.git', :branch => $CodeBranch
+  
+  #pod 'BHCookBook', :path => '../BHCookBook'
+  pod 'BHCookBook', :git => $BaseUrl + 'BHCookBook.git', :branch => $CodeBranch
+  
+  #pod 'BHComment', :path => '../BHComment'
+  pod 'BHComment', :git => $BaseUrl + 'BHComment.git', :branch => $CodeBranch
+  
+  pod 'BHPhoto', :git => $BaseUrl + 'BHPhoto.git', :branch => $CodeBranch
+  
+  
+  
+  #pod 'BHMine', :path => '../BHMine'
+  pod 'BHMine', :git => $BaseUrl + 'BHMine.git', :branch => $CodeBranch
+  
+  #pod 'BHOnlineService', :path => '../BHOnlineService'
+  pod 'BHOnlineService', :git => $BaseUrl + 'BHOnlineService.git', :branch => $CodeBranch
+  
+  #pod 'BHDiscoverTalent', :path => '../BHDiscoverTalent'
+  pod 'BHDiscoverTalent', :git => $BaseUrl + 'BHDiscoverTalent.git', :branch => $CodeBranch
+    
+  #pod 'BHHomeIndicator', :path => '../BHHomeIndicator'
+  pod 'BHHomeIndicator', :git => $BaseUrl + 'BHHomeIndicator.git', :branch => $CodeBranch
+  
+  #pod 'BHFamilyManager', :path => '../BHFamilyManager'
+  pod 'BHFamilyManager', :git => $BaseUrl + 'BHFamilyManager.git', :branch => $CodeBranch
+
+  #pod 'BHAdvertManage', :path => '../BHAdvertManage'
+  pod 'BHAdvertManage', :git => $BaseUrl + 'BHAdvertManage.git', :branch => $CodeBranch
+  
+  #pod 'BHDiscover', :path => '../BHDiscover'
+  pod 'BHDiscover', :git => $BaseUrl + 'BHDiscover.git', :branch => $CodeBranch
+  
+  #pod 'BHDiscoverBusiness', :path => '../BHDiscoverBusiness'
+  pod 'BHDiscoverBusiness', :git => $BaseUrl + 'BHDiscoverBusiness.git', :branch => $CodeBranch
+  
+  #pod 'BHNFCManager', :path => '../BHNFCManager'
+  pod 'BHNFCManager', :git => $BaseUrl + 'BHNFCManager.git', :branch => $CodeBranch
+  
+  #pod 'BHBlackHeadDevice', :path => '../BHBlackHeadDevice'
+  pod 'BHBlackHeadDevice', :git => $BaseUrl + 'BHBlackHeadDevice.git', :branch => $CodeBranch
+  
+#  pod 'BHOralIrrigatorDevice', :path => '../BHOralIrrigatorDevice'
+  pod 'BHOralIrrigatorDevice', :git => $BaseUrl + 'BHOralIrrigatorDevice.git', :branch => $CodeBranch
+
+#  pod 'BHBaseCodeScan', :path => '../BHBaseCodeScan'
+  pod 'BHBaseCodeScan', :git => $BaseUrl + 'BHBaseCodeScan.git', :branch => $CodeBranch
+  
+end
+
+#服务组件
+#和小组件公用的服务组件
+def publicServiceComponents(pkgtype)
+  pod 'BHBusiness', :path => '../BHBusiness'
+  #pod 'BHBusiness', :git => $BaseUrlOld + 'BHBusiness.git',:branch => $CodeBranch
+  
+  moaSubspecsArr = ['BHCount','BHMOA','BHTraceLogModule']
+  if pkgtype != 'appstore'
+    moaSubspecsArr.push('BHAPM')
+  end
+#  pod 'BHMOA', :path => '../BHMOA', :subspecs => moaSubspecsArr
+  pod 'BHMOA', :git => $BaseUrl + 'BHMOA.git', :branch => $CodeBranch, :subspecs => moaSubspecsArr
+  
+  #pod 'BHLogin', :path => '../BHLogin'
+  pod 'BHLogin', :git => $BaseUrl + 'BHLogin.git', :branch => $CodeBranch
+end
+
+def serviceComponents(pkgtype)
+  publicServiceComponents pkgtype
+  
+  #BHKGMusic目前只在sit上线，待事业部提供正式的appid上uat
+#  if pkgtype == 'sit'
+    #pod 'BHKGMusic', :path => '../BHKGMusic'
+    pod 'BHKGMusic', :git => $BaseUrl + 'BHKGMusic.git',:branch => $CodeBranch
+#  end
+  
+  #pod 'BHShare', :path => '../BHShare'
+  #pod 'BHShare', :git => $BaseUrl + 'BHShare.git', :branch => $CodeBranch
+  
+  #pod 'BHPay', :path => '../BHPay'
+  pod 'BHPay', :git => $BaseUrl + 'BHPay.git', :branch => $CodeBranch
+    
+  #pod 'BHMap', :path => '../BHMap'
+  pod 'BHMap', :git => $BaseUrl + 'BHMap.git', :branch => $CodeBranch
+  
+  #pod 'BHQiHoo360', :path => '../BHQiHoo360'
+  pod 'BHQiHoo360', :git => $BaseUrl + 'BHQiHoo360.git', :branch => $CodeBranch
+  
+  #pod 'BHYB200Service', :path => '../BHYB200Service'
+  pod 'BHYB200Service', :git => $BaseUrl + 'BHYB200Service.git', :branch => $CodeBranch
+  
+  #pod 'BHYSCamera', :path => '../BHYSCamera'
+  pod 'BHYSCamera', :git => $BaseUrl + 'BHYSCamera.git', :branch => $CodeBranch
+  
+  #pod 'BHH5Plugin', :path => '../BHH5Plugin'
+  pod 'BHH5Plugin', :git => $BaseUrl + 'BHH5Plugin.git', :branch => $CodeBranch
+  
+  #pod 'BHGateway', :path => '../BHGateway'
+  pod 'BHGateway', :git => $BaseUrl + 'BHGateway.git', :branch => $CodeBranch
+  
+  pod 'BHBluetoothService', :path => '../BHBluetoothService'
+  #pod 'BHBluetoothService', :git => $BaseUrl + 'BHBluetoothService.git', :branch => $CodeBranch
+  
+  
+  #pod 'BHBaseWeex', :path => '../BHBaseWeex'
+  pod 'BHBaseWeex', :git => $BaseUrl + 'BHBaseWeex.git', :branch => $CodeBranch
+  
+  pod 'BHWeex', :path => '../BHWeex'
+ # pod 'BHWeex', :git => $BaseUrl + 'BHWeex.git', :branch => $CodeBranch
+  
+  #pod 'BHXiaoMeiVoice', :path => '../BHXiaoMeiVoice'
+  pod 'BHXiaoMeiVoice', :git => $BaseUrl + 'BHXiaoMeiVoice.git', :branch => $CodeBranch
+  
+  #pod 'BHJDKepler', :path => '../BHJDKepler'
+  pod 'BHJDKepler', :git => $BaseUrl + 'BHJDKepler.git', :branch => $CodeBranch
+  
+  pod 'BHCodeScan/BHCodeScanCore', :git => $BaseUrl + 'BHCodeScan.git', :branch => $CodeBranch
+  
+  #pod 'BHDeviceOTA', :path => '../BHDeviceOTA'
+  pod 'BHDeviceOTA', :git => $BaseUrl + 'BHDeviceOTA.git', :branch => $CodeBranch
+  
+  #pod 'BHVideo', :path => '../BHVideo'
+  pod 'BHVideo', :git => $BaseUrl + 'BHVideo.git', :branch => $CodeBranch
+  
+  #pod 'BHAliOSS', :path => '../BHAliOSS'
+  pod 'BHAliOSS', :git => $BaseUrl + 'BHAliOSS.git', :branch => $CodeBranch
+  
+  #pod 'BHJSBridge', :path => '../BHJSBridge'
+  pod 'BHJSBridge', :git => $BaseUrl + 'BHJSBridge.git', :branch => $CodeBranch
+
+end
+
+#基础组件
+#和小组件公用的基础组件
+def publicBaseComponents(pkgtype)
+  #如需要特定版本，在后面增加版本号 '~> 5.1.37'
+  pod 'MSmartSDK', '~>5.1.53'
+  
+  #pod 'DolphinFramework', :path => '../DolphinFramework'
+  pod 'DolphinFramework', :git => $BaseUrl + 'DolphinFramework.git', :branch => $CodeBranch
+  
+  
+end
+
+def baseComponents(pkgtype)
+  publicBaseComponents pkgtype
+  
+  #pod 'BHTMFFramework', :path => '../BHTMFFramework'
+  pod 'BHTMFFramework', :git => $BaseUrl + 'BHTMFFramework.git', :branch => $CodeBranch
+  
+  #pod 'midea-common-jsbridge', :path => '../midea-common-jsbridge'
+  pod 'midea-common-jsbridge', :git => $BaseUrl + 'midea-common-jsbridge.git', :branch => $CodeBranch
+  
+  #pod 'DolphinRouter', :path => '../DolphinRouter'
+  pod 'DolphinRouter', :git => 'http://git.midea.com/IT-MobileDivision/DolphinKit/DophinRouter/iOS.git', :branch => $CodeBranch
+  
+  if pkgtype != 'appstore'
+    # 性能监控组件
+    #pod 'DolphinPerformance', :path => '../DolphinPerformance'
+    pod 'DolphinPerformance', :git => $BaseUrl + 'MideaPerformance.git', :branch => 'dev'
+    
+    #pod 'BHDevTools', :path => '../BHDevTools'
+    pod 'BHDevTools', :git => $BaseUrl + 'BHDevTools.git', :branch => 'dev'
+  end
+end
+
+#pod版本前面的9表示引用Framework动态库仓库，否则引用源码仓库
+def meiju_project_config_dev(pkgtype)
+  common pkgtype
+  #静态库
+ if $use_dynamic_dev
+   dynamicComponents pkgtype
+ else
+  #源码库
+    businessComponents pkgtype
+    serviceComponents pkgtype
+    baseComponents pkgtype
+  end
+  
+end
+
+# 注意发布环境记得修改各个仓库的 branch(TAG)
+def meiju_project_config(pkgtype)
+  common pkgtype
+  businessComponents pkgtype
+  serviceComponents pkgtype
+  baseComponents pkgtype
+end
+
+
+target 'meiju-ios' do
+  if $meiju_project_config_is_dev
+    meiju_project_config_dev 'appstore'
+  else
+    meiju_project_config 'appstore'
+  end
+end
+
+target 'meiju-inhouse' do
+  if $meiju_project_config_is_dev
+    meiju_project_config_dev 'dis'
+    else
+    meiju_project_config 'dis'
+  end
+end
+
+#小组件pod配置,参数pkgtype:包类型
+def widgetCommon(pkgtype)
+  if $use_dynamic_dev
+    #静态库
+    publicDynamicComponents pkgtype
+  else
+    #源码库
+    publicCommon pkgtype
+    publicBaseComponents pkgtype
+    publicServiceComponents pkgtype
+  end
+end
+
+
+target 'meiju-inhouseWidget' do
+  widgetCommon 'dev'
+end
+
+target 'meiju-releaseWidget' do
+  widgetCommon 'appstore'
+end
+
+target 'SceneIntent' do
+  widgetCommon 'dev'
+end
+
+target 'SceneIntentUI' do
+  widgetCommon 'dev'
+end
+
+target 'SceneIntent_appstore' do
+  widgetCommon 'appstore'
+end
+
+target 'SceneIntent_appstoreUI' do
+  widgetCommon 'appstore'
+end
+
+target 'meiju-inhousSceneWidget' do
+  widgetCommon 'dev'
+end
+
+target 'meiju-inhousSceneReleaseWidget' do
+  widgetCommon 'appstore'
+end
+
+
+
+#批量修改编译参数
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      
+      #屏蔽变量nonnull编译警告, xcode11可能要使用-Wno-nonnull，需要验证
+      origin_build_config = config.base_configuration_reference
+      origin_build_config_parser = Xcodeproj::Config.new(origin_build_config.real_path)
+      
+      lib_warning_flag = origin_build_config_parser.attributes()['WARNING_CFLAGS']
+      if lib_warning_flag != nil
+        config.build_settings['WARNING_CFLAGS'] = lib_warning_flag + ' -Wno-nullability-completeness'
+        else
+        config.build_settings['WARNING_CFLAGS'] = '-Wno-nullability-completeness'
+      end
+      
+      # 设置加固编译配置
+      if $project_is_need_kiwisec
+        if kiwisec_frameworks.include?(target.name)
+          lib_other_c_falgs = origin_build_config_parser.attributes()['OTHER_CFLAGS']
+          tem_other_c_falgs = '-kce-str=1 -kce-mbs=1 -kce-mbs-inst-chance=30 -kce-mbs-chance=30 -kce-fla=2 -kce-fla-chance=30 -kce-bcf-prob=20 -kce-bcf=2 -kce-bcf-chance=30'
+          if lib_other_c_falgs != nil
+            config.build_settings['OTHER_CFLAGS'] = lib_other_c_falgs + ' ' + tem_other_c_falgs
+            else
+            config.build_settings['OTHER_CFLAGS'] = tem_other_c_falgs
+          end
+        end
+      end
+      
+      # 企业包时添加各个组件的宏定义，方便判断测试环境
+      if $meiju_project_config_is_dev
+          config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)','MEIJU_IN_HOUSE=1']
+      end
+      
+      config.build_settings['VALID_ARCHS'] = 'arm64'
+      config.build_settings['CLANG_WARN_DOCUMENTATION_COMMENTS'] = 'NO'
+      config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'NO'
+      config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = 'NO'
+      
+      #config.build_settings['CC'] = '$(PODS_ROOT)/../clang'
+      #config.build_settings['OTHER_CFLAGS'] = '-ftime-trace'
+      
+      #if static_frameworks.include?(target.name)
+        #config.build_settings['MACH_O_TYPE'] = 'staticlib'
+      #end
+    end
+  end
+end
