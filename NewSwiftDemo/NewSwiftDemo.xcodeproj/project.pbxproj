@@ -26,6 +26,7 @@
 		238B37C128695D2500A58CBC /* HJNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C028695D2500A58CBC /* HJNet.swift */; };
 		238B37C328695D9400A58CBC /* HJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C228695D9400A58CBC /* HJModel.swift */; };
 		238B37C528695DC000A58CBC /* MoyaUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C428695DC000A58CBC /* MoyaUseViewController.swift */; };
+		239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239C095B29E6E7C200BD48E2 /* OEMDevice.zip */; };
 		23A19ABC285863FE0033D654 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19ABB285863FE0033D654 /* Counter.swift */; };
 		23A19ABE2858642D0033D654 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19ABD2858642D0033D654 /* CounterTests.swift */; };
 		23A19AFF28586BCB0033D654 /* UIStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19AFE28586BCB0033D654 /* UIStackViewController.swift */; };
@@ -188,6 +189,7 @@
 		238B37C428695DC000A58CBC /* MoyaUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaUseViewController.swift; sourceTree = "<group>"; };
 		238B37C62869913700A58CBC /* ErrorDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorDemo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23970E91296177D4007ACFFE /* Alamofile00001.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofile00001.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		239C095B29E6E7C200BD48E2 /* OEMDevice.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OEMDevice.zip; sourceTree = "<group>"; };
 		23A19AB928582FFC0033D654 /* SwiftProtocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftProtocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABA28585DFC0033D654 /* StructMutating.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructMutating.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABB285863FE0033D654 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
@@ -705,6 +707,7 @@
 				233C116029C33F4200C1C44D /* MeijuPodfile */,
 				233C115E29C33E7B00C1C44D /* MideaOEMPodfile */,
 				23B9508B29B11AFA002FE498 /* dmoea.zip */,
+				239C095B29E6E7C200BD48E2 /* OEMDevice.zip */,
 				23ED2F9829B0F47E00EE5539 /* chm.zip */,
 				238B37A42860747B00A58CBC /* GoF 经典设计模式的 Swift 实现 */,
 				23F6E25F28488FE6009643C5 /* Play-with-Swift-5.1 */,
@@ -1330,6 +1333,7 @@
 				23A19B13285975E90033D654 /* RxSwift1ViewController.xib in Resources */,
 				23BDD2832859E772008B69AA /* test.txt in Resources */,
 				23F6E0C828473BDA009643C5 /* Main.storyboard in Resources */,
+				239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
