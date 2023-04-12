@@ -27,6 +27,9 @@
 		238B37C328695D9400A58CBC /* HJModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C228695D9400A58CBC /* HJModel.swift */; };
 		238B37C528695DC000A58CBC /* MoyaUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C428695DC000A58CBC /* MoyaUseViewController.swift */; };
 		239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239C095B29E6E7C200BD48E2 /* OEMDevice.zip */; };
+		239C095E29E6EC0200BD48E2 /* MideaAddDeviceSuccessViewController.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239C095D29E6EC0100BD48E2 /* MideaAddDeviceSuccessViewController.zip */; };
+		239C096229E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239C096129E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip */; };
+		239C096429E6F16400BD48E2 /* IrregularButtonLayout-main.zip in Resources */ = {isa = PBXBuildFile; fileRef = 239C096329E6F16400BD48E2 /* IrregularButtonLayout-main.zip */; };
 		23A19ABC285863FE0033D654 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19ABB285863FE0033D654 /* Counter.swift */; };
 		23A19ABE2858642D0033D654 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19ABD2858642D0033D654 /* CounterTests.swift */; };
 		23A19AFF28586BCB0033D654 /* UIStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A19AFE28586BCB0033D654 /* UIStackViewController.swift */; };
@@ -190,6 +193,9 @@
 		238B37C62869913700A58CBC /* ErrorDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorDemo.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23970E91296177D4007ACFFE /* Alamofile00001.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofile00001.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		239C095B29E6E7C200BD48E2 /* OEMDevice.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = OEMDevice.zip; sourceTree = "<group>"; };
+		239C095D29E6EC0100BD48E2 /* MideaAddDeviceSuccessViewController.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = MideaAddDeviceSuccessViewController.zip; sourceTree = "<group>"; };
+		239C096129E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "CGXPageCollectionView-OC-master.zip"; sourceTree = "<group>"; };
+		239C096329E6F16400BD48E2 /* IrregularButtonLayout-main.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "IrregularButtonLayout-main.zip"; sourceTree = "<group>"; };
 		23A19AB928582FFC0033D654 /* SwiftProtocol.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftProtocol.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABA28585DFC0033D654 /* StructMutating.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructMutating.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23A19ABB285863FE0033D654 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
@@ -704,6 +710,9 @@
 				23BDD2822859E772008B69AA /* test.txt */,
 				23183DED29AE2A6B0068793D /* OEMTheme.zip */,
 				23F6E0C428473BDA009643C5 /* ViewController.swift */,
+				239C096329E6F16400BD48E2 /* IrregularButtonLayout-main.zip */,
+				239C096129E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip */,
+				239C095D29E6EC0100BD48E2 /* MideaAddDeviceSuccessViewController.zip */,
 				233C116029C33F4200C1C44D /* MeijuPodfile */,
 				233C115E29C33E7B00C1C44D /* MideaOEMPodfile */,
 				23B9508B29B11AFA002FE498 /* dmoea.zip */,
@@ -1320,6 +1329,8 @@
 			files = (
 				23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */,
 				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
+				239C096229E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip in Resources */,
+				239C096429E6F16400BD48E2 /* IrregularButtonLayout-main.zip in Resources */,
 				235DE9E628542E0F00EA17FA /* 类常量.png in Resources */,
 				233C10D729B2404800C1C44D /* Mydemo.zip in Resources */,
 				23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */,
@@ -1334,6 +1345,7 @@
 				23BDD2832859E772008B69AA /* test.txt in Resources */,
 				23F6E0C828473BDA009643C5 /* Main.storyboard in Resources */,
 				239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */,
+				239C095E29E6EC0200BD48E2 /* MideaAddDeviceSuccessViewController.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
