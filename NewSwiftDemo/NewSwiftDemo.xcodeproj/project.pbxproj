@@ -61,6 +61,7 @@
 		23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BDD27D2859D1E2008B69AA /* RxSwift.storyboard */; };
 		23BDD2802859E0E1008B69AA /* RxSwiftTableViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD27F2859E0E1008B69AA /* RxSwiftTableViewController10.swift */; };
 		23BDD2832859E772008B69AA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23BDD2822859E772008B69AA /* test.txt */; };
+		23CDAA0C2AA4DB2400912E39 /* Alexa.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23CDAA0B2AA4DB2300912E39 /* Alexa.zip */; };
 		23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23ED2F9829B0F47E00EE5539 /* chm.zip */; };
 		23F6E0C128473BDA009643C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C028473BDA009643C5 /* AppDelegate.swift */; };
 		23F6E0C528473BDA009643C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C428473BDA009643C5 /* ViewController.swift */; };
@@ -259,6 +260,7 @@
 		23BDD29C285EF17F008B69AA /* Alamofire001.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire001.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23BDD29D285F0216008B69AA /* Alamofire002.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire002.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23BDD29E285F03A0008B69AA /* Alamofire003.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire003.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		23CDAA0B2AA4DB2300912E39 /* Alexa.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Alexa.zip; sourceTree = "<group>"; };
 		23ED2F9829B0F47E00EE5539 /* chm.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = chm.zip; sourceTree = "<group>"; };
 		23F6E0BD28473BDA009643C5 /* NewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F6E0C028473BDA009643C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 		23F6E0BF28473BDA009643C5 /* NewSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				23CDAA0B2AA4DB2300912E39 /* Alexa.zip */,
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
 				233C115229C33E2E00C1C44D /* BLE */,
 				233C114D29C33E2E00C1C44D /* Location */,
@@ -1344,6 +1347,7 @@
 				23A19B13285975E90033D654 /* RxSwift1ViewController.xib in Resources */,
 				23BDD2832859E772008B69AA /* test.txt in Resources */,
 				23F6E0C828473BDA009643C5 /* Main.storyboard in Resources */,
+				23CDAA0C2AA4DB2400912E39 /* Alexa.zip in Resources */,
 				239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */,
 				239C095E29E6EC0200BD48E2 /* MideaAddDeviceSuccessViewController.zip in Resources */,
 			);
