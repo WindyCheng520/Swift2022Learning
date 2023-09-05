@@ -21,6 +21,8 @@
 		233D20E12857601900F41302 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E02857601900F41302 /* ListItem.m */; };
 		233D20E4285767D900F41302 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E3285767D900F41302 /* ListModel.swift */; };
 		233D20E828582BE500F41302 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D20E728582BE500F41302 /* Dictionary+Extension.swift */; };
+		235C35182AA74B410074D2F0 /* jumpThirdAppInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */; };
+		235C351A2AA74B4A0074D2F0 /* jumpThirdAppInfo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */; };
 		235DE9E628542E0F00EA17FA /* 类常量.png in Resources */ = {isa = PBXBuildFile; fileRef = 235DE9E528542E0F00EA17FA /* 类常量.png */; };
 		238B37BF28695C7A00A58CBC /* HJApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37BE28695C7A00A58CBC /* HJApi.swift */; };
 		238B37C128695D2500A58CBC /* HJNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B37C028695D2500A58CBC /* HJNet.swift */; };
@@ -136,6 +138,8 @@
 		233D20E62857749100F41302 /* Advanced枚举.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Advanced枚举.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		233D20E728582BE500F41302 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		233D20E928582D7900F41302 /* Swift反射.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Swift反射.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumpThirdAppInfo.json; sourceTree = "<group>"; };
+		235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jumpThirdAppInfo1.json; sourceTree = "<group>"; };
 		235DE9E428542B6000EA17FA /* Grouping.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Grouping.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		235DE9E528542E0F00EA17FA /* 类常量.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类常量.png"; sourceTree = "<group>"; };
 		235DE9E72854774700EA17FA /* 函式.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "函式.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -708,6 +712,8 @@
 			children = (
 				23CDAA0B2AA4DB2300912E39 /* Alexa.zip */,
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
+				235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */,
+				235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */,
 				233C115229C33E2E00C1C44D /* BLE */,
 				233C114D29C33E2E00C1C44D /* Location */,
 				23BDD2822859E772008B69AA /* test.txt */,
@@ -1348,8 +1354,10 @@
 				23BDD2832859E772008B69AA /* test.txt in Resources */,
 				23F6E0C828473BDA009643C5 /* Main.storyboard in Resources */,
 				23CDAA0C2AA4DB2400912E39 /* Alexa.zip in Resources */,
+				235C35182AA74B410074D2F0 /* jumpThirdAppInfo.json in Resources */,
 				239C095C29E6E7C200BD48E2 /* OEMDevice.zip in Resources */,
 				239C095E29E6EC0200BD48E2 /* MideaAddDeviceSuccessViewController.zip in Resources */,
+				235C351A2AA74B4A0074D2F0 /* jumpThirdAppInfo1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,21 @@
+{
+    "alexaInfo":{
+    "alexaAppBaseUrl": "https://alexa.amazon.com/spa/skill-account-linking-consent",
+    "scope": "ALEXA",
+    "skill_id": "amzn1.ask.skill.433d3e48-f619-4827-8b85-6700fe05a167",
+    "client_secret": "536728523b2beb762deb62c6ccada92fbd040f16051018bb454b6fd2d67a0c06870f0dc08a5fec13394e79664004dcf279dd921221995625e44e279a40d454488f519af84a402a02e71158359f82f4e8",
+    "redirect_uri": ["https://pitangui.amazon.com/api/skill/link/M1ZNW3SS00CNAC"],
+    "lwaUrl": "https://www.amazon.com/ap/oa",
+    "client_id": "oauth2.client.d022d57916e60c64de16c6026bfe25cff9a00dab05a9cd1f40a27f64e5369363",
+    "alexaQueryItems": {
+        "fragment": "skill-account-linking-consent",
+        "scope": "alexa::skills:account_linking",
+        "skill_stage": "development",
+        "response_type": "code",
+        "redirect_uri": "https://sit-us.aiotelink.com/mideaoem/link/alexa",
+        "state": "vgszBovrw8KfVoE5cdEaH1XP2cQhAwCW",
+        "secret": "96f10aef0250ef6b77d4e7666b67032e48d79f50c95911cd93b435aa83578968",
+        "client_id": "amzn1.application-oa2-client.9a1dbb83eaf94f08a587e579a3b51274"
+    }
+   }
+}
