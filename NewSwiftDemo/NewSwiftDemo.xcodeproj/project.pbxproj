@@ -267,6 +267,7 @@
 		23BDD29E285F03A0008B69AA /* Alamofire003.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire003.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23CDAA0B2AA4DB2300912E39 /* Alexa.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Alexa.zip; sourceTree = "<group>"; };
 		23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_aa; sourceTree = "<group>"; };
+		23EB65F82CB6DE4C00F62AB4 /* split_zip_part_ab */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_ab; sourceTree = "<group>"; };
 		23ED2F9829B0F47E00EE5539 /* chm.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = chm.zip; sourceTree = "<group>"; };
 		23F6E0BD28473BDA009643C5 /* NewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F6E0C028473BDA009643C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -715,6 +716,7 @@
 				23CDAA0B2AA4DB2300912E39 /* Alexa.zip */,
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
 				23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */,
+				23EB65F82CB6DE4C00F62AB4 /* split_zip_part_ab */,
 				235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */,
 				235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */,
 				233C115229C33E2E00C1C44D /* BLE */,
