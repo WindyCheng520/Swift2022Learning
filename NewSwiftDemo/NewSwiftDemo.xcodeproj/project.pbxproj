@@ -66,6 +66,7 @@
 		23CDAA0C2AA4DB2400912E39 /* Alexa.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23CDAA0B2AA4DB2300912E39 /* Alexa.zip */; };
 		23EB65F72CB6DDEB00F62AB4 /* split_zip_part_aa in Resources */ = {isa = PBXBuildFile; fileRef = 23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */; };
 		23EB65FA2CB6DEAC00F62AB4 /* split_zip_part_ac in Resources */ = {isa = PBXBuildFile; fileRef = 23EB65F92CB6DEAC00F62AB4 /* split_zip_part_ac */; };
+		23EB65FC2CB6DF0F00F62AB4 /* split_zip_part_ad in Resources */ = {isa = PBXBuildFile; fileRef = 23EB65FB2CB6DF0E00F62AB4 /* split_zip_part_ad */; };
 		23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23ED2F9829B0F47E00EE5539 /* chm.zip */; };
 		23F6E0C128473BDA009643C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C028473BDA009643C5 /* AppDelegate.swift */; };
 		23F6E0C528473BDA009643C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C428473BDA009643C5 /* ViewController.swift */; };
@@ -270,6 +271,7 @@
 		23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_aa; sourceTree = "<group>"; };
 		23EB65F82CB6DE4C00F62AB4 /* split_zip_part_ab */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_ab; sourceTree = "<group>"; };
 		23EB65F92CB6DEAC00F62AB4 /* split_zip_part_ac */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_ac; sourceTree = "<group>"; };
+		23EB65FB2CB6DF0E00F62AB4 /* split_zip_part_ad */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_ad; sourceTree = "<group>"; };
 		23ED2F9829B0F47E00EE5539 /* chm.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = chm.zip; sourceTree = "<group>"; };
 		23F6E0BD28473BDA009643C5 /* NewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F6E0C028473BDA009643C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */,
 				23EB65F82CB6DE4C00F62AB4 /* split_zip_part_ab */,
 				23EB65F92CB6DEAC00F62AB4 /* split_zip_part_ac */,
+				23EB65FB2CB6DF0E00F62AB4 /* split_zip_part_ad */,
 				235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */,
 				235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */,
 				233C115229C33E2E00C1C44D /* BLE */,
@@ -1358,6 +1361,7 @@
 				23F6E0CD28473BDC009643C5 /* LaunchScreen.storyboard in Resources */,
 				233C115F29C33E7B00C1C44D /* MideaOEMPodfile in Resources */,
 				23F6E0CA28473BDC009643C5 /* Assets.xcassets in Resources */,
+				23EB65FC2CB6DF0F00F62AB4 /* split_zip_part_ad in Resources */,
 				23F6E0FA28478E64009643C5 /* ListViewController.xib in Resources */,
 				23F6E33B2848F042009643C5 /* DemoTableViewCell.xib in Resources */,
 				23A19B13285975E90033D654 /* RxSwift1ViewController.xib in Resources */,

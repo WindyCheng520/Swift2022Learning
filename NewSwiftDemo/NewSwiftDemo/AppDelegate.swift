@@ -5,6 +5,21 @@
 //  Created by Windy on 2022/6/1.
 //
 
+//
+//在Mac上将一个zip文件分割成几个小文件，可以使用命令行工具如split。首先，您需要确定想要每个分割文件的大小。
+//
+//以下是一个使用split命令的例子，将一个名为example.zip的文件分割成每个大小为10MB的小文件。
+//
+//split -b 10M example.zip split_zip_part_
+//这将创建名为split_zip_part_aa, split_zip_part_ab, split_zip_part_ac等的多个文件。
+//
+//注意：split命令不会对分割的文件进行压缩，它仅仅是将文件按照指定大小分割。如果需要压缩这些分割后的文件，可以使用gzip或zip命令。
+//
+//如果你想要重新组合这些分割的文件，可以使用以下命令：
+//
+//cat split_zip_part_* > combined.zip
+//这会将所有以split_zip_part_开头的文件重新组合成一个名为combined.zip的文件。
+
 import UIKit
 
 @main
