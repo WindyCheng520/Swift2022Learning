@@ -64,6 +64,7 @@
 		23BDD2802859E0E1008B69AA /* RxSwiftTableViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDD27F2859E0E1008B69AA /* RxSwiftTableViewController10.swift */; };
 		23BDD2832859E772008B69AA /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23BDD2822859E772008B69AA /* test.txt */; };
 		23CDAA0C2AA4DB2400912E39 /* Alexa.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23CDAA0B2AA4DB2300912E39 /* Alexa.zip */; };
+		23EB65F72CB6DDEB00F62AB4 /* split_zip_part_aa in Resources */ = {isa = PBXBuildFile; fileRef = 23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */; };
 		23ED2F9929B0F47F00EE5539 /* chm.zip in Resources */ = {isa = PBXBuildFile; fileRef = 23ED2F9829B0F47E00EE5539 /* chm.zip */; };
 		23F6E0C128473BDA009643C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C028473BDA009643C5 /* AppDelegate.swift */; };
 		23F6E0C528473BDA009643C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6E0C428473BDA009643C5 /* ViewController.swift */; };
@@ -265,6 +266,7 @@
 		23BDD29D285F0216008B69AA /* Alamofire002.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire002.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23BDD29E285F03A0008B69AA /* Alamofire003.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Alamofire003.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		23CDAA0B2AA4DB2300912E39 /* Alexa.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Alexa.zip; sourceTree = "<group>"; };
+		23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */ = {isa = PBXFileReference; lastKnownFileType = file; path = split_zip_part_aa; sourceTree = "<group>"; };
 		23ED2F9829B0F47E00EE5539 /* chm.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = chm.zip; sourceTree = "<group>"; };
 		23F6E0BD28473BDA009643C5 /* NewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F6E0C028473BDA009643C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 			children = (
 				23CDAA0B2AA4DB2300912E39 /* Alexa.zip */,
 				23F6E0C028473BDA009643C5 /* AppDelegate.swift */,
+				23EB65F62CB6DDEA00F62AB4 /* split_zip_part_aa */,
 				235C35192AA74B490074D2F0 /* jumpThirdAppInfo1.json */,
 				235C35172AA74B410074D2F0 /* jumpThirdAppInfo.json */,
 				233C115229C33E2E00C1C44D /* BLE */,
@@ -1337,6 +1340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BDD27E2859D1E2008B69AA /* RxSwift.storyboard in Resources */,
+				23EB65F72CB6DDEB00F62AB4 /* split_zip_part_aa in Resources */,
 				23183DEE29AE2A6C0068793D /* OEMTheme.zip in Resources */,
 				239C096229E6EFAD00BD48E2 /* CGXPageCollectionView-OC-master.zip in Resources */,
 				239C096429E6F16400BD48E2 /* IrregularButtonLayout-main.zip in Resources */,
